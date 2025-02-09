@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="images\heart.png" />
+</head>
+<body>
+
+  <!-- Matrix Rain Background -->
+  <canvas id="matrix-bg"></canvas>
+
+  <!-- Terminal Container (with boot sequence and typing effect) -->
+  <div class="terminal-container">
+    <div class="terminal-header">
+      <div class="controls">
+        <div class="control close"></div>
+        <div class="control minimize"></div>
+        <div class="control maximize"></div>
+      </div>
+      
+        <div>
+          <u>Nitin's Portfolio</u>
+        </div>
+      
+      <div style="width: 50px;"></div>
+    </div>
+    <div class="terminal-content">
+      <h3>WELCOME</h3>
+      <!-- This first paragraph will have a typing effect -->
+      <p>Initializing portfolio system...</p>
+      <p>Loading modules: [About, Projects, Contact]</p>
+      <ul>
+        <li>Module 1: About Me</li>
+        <li>Module 2: Projects</li>
+        <li>Module 3: Contact Info</li>
+      </ul>
+      <h3>SYSTEM LOG</h3>
+      <p>All systems operational.</p>
+      <pre><code>echo "Welcome to my portfolio!"</code></pre>
+    </div>
+  </div>
+
+  <!-- Original Portfolio Header Section -->
+  <div id="header">
+    <div class="container">
+      <nav>
+        <img src="images/Logo.png" class="logo" alt="Logo" />
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-text">
+        <p>BTech(1st Year) Student</p>
+        <!-- You can keep the glitch-text effect here as well -->
+        <h1 class="glitch-text" data-text="Hi, I'm Nitin from India">
+          Hi, I'm <span>Nitin</span><br />from India
+        </h1>
+        <br>
+        <a href="images\nitin resume final - enhanced.pdf" target="_blank" class="resume-link">
+            <button class="resume button">Resume</button>
+          </a>          
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div id="about">
+    <div class="container">
+      <div class="row">
+        <div class="about-col-1">
+          <img src="images/nitin.png" alt="User Photo" />
+        </div>
+        <div class="about-col-2">
+          <h1 class="sub-title">About Me</h1>
+          <p>
+            Hi! I'm Nitin Tripathi, a Btech(1st year) student at KIET. I'm from Varanasi.
+            I love to code, workout and help people. A renowned line inspires me which says,
+            "We can't help everyone but everyone can help someone." And that is why I want to
+            become an Entrepreneur.
+          </p>
+          <div class="tab-titles">
+            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+            <p class="tab-links" onclick="opentab('education')">Education</p>
+            <p class="tab-links" onclick="opentab('achievements')">Achievements</p>
+          </div>
+          <div class="tab-contents active-tab" id="skills">
+            <ul>
+              <li>
+                <span>Languages</span><br />
+                Python, Java, HTML, CSS, JS, TS, SQL
+              </li>
+              <li>
+                <span>Web Development</span><br />
+                .NET CORE, Angular
+              </li>
+              <li>
+                <span>DBMS</span><br />
+                SQL Server
+              </li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="education">
+            <ul>
+              <li>
+                <span>Smile Kindergarten</span><br />
+                Playschool
+              </li>
+              <li>
+                <span>St. John's School</span><br />
+                LKG-UKG
+              </li>
+              <li>
+                <span>Vanasthali Public School</span><br />
+                UKG-II Grade
+              </li>
+              <li>
+                <span>SOS Hermann Gmeiner School</span><br />
+                III-XII Grade
+              </li>
+              <li>
+                <span>KIET Group of Institutions</span><br />
+                Btech (2024-2028)
+              </li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="achievements">
+            <ul>
+              <li>
+                <span>CODEX</span><br />
+                Winner
+              </li>
+              <li>
+                <span>X Board</span><br />
+                98.4%
+              </li>
+              <li>
+                <span>Inter HGS</span><br />
+                5 Times winner
+              </li>
+              <li>
+                <span>KIET Mr Freshers</span><br />
+                Runner-up
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Form -->
+  <div id="contact">
+  <form method="post" action="/send-message">
+    
+    <h1 style="text-align: center;">CONTACT ME</h1>
+    
+    <div class="terminal-prompt">$ NAME:</div>
+    <input type="text" name="name" placeholder="Your name" required />
+
+    <div class="terminal-prompt">$ EMAIL:</div>
+    <input type="email" name="email" placeholder="Your email" required />
+
+    <div class="terminal-prompt">$ MESSAGE:</div>
+    <textarea name="message" placeholder="Your message here..." required></textarea>
+
+    <input type="submit" value="SEND MESSAGE" />
+  </form>
+  </div>
+</div>
+
+  <!-- JavaScript for Tab Switching (for About section tabs) -->
+  <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname) {
+      for (let tablink of tablinks) {
+        tablink.classList.remove("active-link");
+      }
+      for (let tabcontent of tabcontents) {
+        tabcontent.classList.remove("active-tab");
+      }
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab");
+    }
+  </script>
+
+  <!-- Combined JavaScript for Matrix Rain, Terminal Boot Sequence, and Typing Effect -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Matrix rain effect
+      const canvas = document.getElementById('matrix-bg');
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      
+      const characters = "ｦｱｳｴｵｶｷｹｺｻｼｽｾｿﾀﾂﾃﾅﾆﾇﾈﾊﾋﾎﾏﾐﾑﾒﾓﾔﾕﾗﾘﾜ0123456789".split("");
+      const fontSize = 16;
+      const columns = canvas.width / fontSize;
+      const drops = [];
+      for (let i = 0; i < columns; i++) {
+        drops[i] = 1;
+      }
+      function draw() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "#0F0";
+        ctx.font = fontSize + "px monospace";
+        for (let i = 0; i < drops.length; i++) {
+          const text = characters[Math.floor(Math.random() * characters.length)];
+          ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+          if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+          }
+          drops[i]++;
+        }
+      }
+      setInterval(draw, 35);
+      window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      });
+  
+      // Terminal boot sequence effect (fade in the terminal container)
+      const termContainer = document.querySelector('.terminal-container');
+      termContainer.style.opacity = '0';
+      setTimeout(() => {
+        termContainer.style.transition = 'opacity 0.5s';
+        termContainer.style.opacity = '1';
+      }, 300);
+  
+      // Typing effect for the first paragraph in the terminal content
+      const firstPara = document.querySelector('.terminal-content p');
+      const originalText = firstPara.innerHTML;
+      firstPara.innerHTML = '';
+      let i = 0;
+      function typeWriter() {
+        if (i < originalText.length) {
+          firstPara.innerHTML += originalText.charAt(i);
+          i++;
+          setTimeout(typeWriter, 50);
+        }
+      }
+      setTimeout(typeWriter, 800);
+    });
+  </script>
+</body>
+</html>
