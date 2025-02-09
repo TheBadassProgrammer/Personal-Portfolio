@@ -263,8 +263,6 @@ a:hover {
 /* ABOUT SECTION */
 #about {
   padding: 200px 0 200px;
-  margin-inline: auto;
-  width: 70%;
   color: var(--terminal-green);
 }
 
