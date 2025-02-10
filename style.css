@@ -401,6 +401,22 @@ input[type="submit"]:hover {
   color: var(--terminal-dark);
   box-shadow: 0 0 25px rgba(0, 255, 0, 0.4);
 }
+/* Classic CMD cursor */
+.terminal-cursor {
+  display: inline-block;
+  width: 1ch; /* Matches character width */
+  height: 1em;
+  background: var(--terminal-green);
+  vertical-align: middle;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+  box-shadow: 0 0 5px var(--terminal-shadow);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
 
 /* Responsive adjustments */
 @media only screen and (max-width: 768px) {

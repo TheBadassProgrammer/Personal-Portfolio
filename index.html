@@ -81,10 +81,18 @@
         <div class="about-col-2">
           <h1 class="sub-title">About Me</h1>
           <p>
-            Hi! I'm Nitin Tripathi, a Btech(1st year) student at KIET. I'm from Varanasi.
-            I love to code, workout and help people. A renowned line inspires me which says,
-            "We can't help everyone but everyone can help someone." And that is why I want to
-            become an Entrepreneur.
+            Hey there! I’m Nitin Tripathi, a problem-solver, open-source contributor, and full-stack developer in the making. Currently pursuing my B.Tech in Computer Science, I’m on a mission to master full-stack development by the end of 2025 and build tech that makes an impact.
+
+I’ve already worked on some pretty cool projects, including: <br>
+
+WhitePaper – An open-source digital notepad built with Django, making note-taking effortless.<br>
+Gesture-Based Home Automation – A smart home system using OpenCV & Arduino, designed to help the elderly control appliances with simple hand gestures.<br>
+X-ray Image Similarity Tool – A computer vision-based verification system ensuring product authenticity in warehouses.<br>
+Beyond projects, I’ve secured a runner-up position in a coding competition, and I’m gearing up for Google Summer of Code 2025, aiming to contribute to impactful open-source projects.
+
+I’m constantly pushing my limits, learning new technologies, and striving to create efficient, scalable, and innovative solutions. My ultimate goal? To become a top-tier full-stack developer and build a financially successful career doing what I love.
+
+Let’s connect and build something awesome together!
           </p>
           <div class="tab-titles">
             <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
@@ -94,16 +102,20 @@
           <div class="tab-contents active-tab" id="skills">
             <ul>
               <li>
-                <span>Languages</span><br />
+                <span>Programming Languages:</span><br />
                 Python, Java, HTML, CSS, JS, TS, SQL
               </li>
               <li>
                 <span>Web Development</span><br />
-                .NET CORE, Angular
+                .NET CORE, Angular, Django
               </li>
               <li>
                 <span>DBMS</span><br />
                 SQL Server
+              </li>
+              <li>
+                <span>Other Tools & Technologies:</span><br />
+                Git & GitHub, VS Code, Arduino
               </li>
             </ul>
           </div>
@@ -249,6 +261,15 @@
         }
       }
       setTimeout(typeWriter, 800);
+      const cursorElements = document.querySelectorAll(
+        'h2, h3, .terminal-prompt'
+    );
+    
+    cursorElements.forEach(element => {
+        const cursor = document.createElement('span');
+        cursor.className = 'terminal-cursor';
+        element.appendChild(cursor);
+    });
     });
   </script>
 </body>
