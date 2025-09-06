@@ -4,16 +4,36 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <title>Nitin Tripathi — Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/x-icon" href="images\heart.png" />
+  <link rel="icon" type="image/x-icon" href="images/heart.png" />
 </head>
 <body>
 
   <!-- Matrix Rain Background -->
   <canvas id="matrix-bg"></canvas>
 
-  <!-- Terminal Container (with boot sequence and typing effect) -->
+  <!-- Sticky Navigation / Header -->
+  <header id="main-header">
+    <div class="nav-inner container">
+      <div class="brand">
+        <img src="images/Logo.png" class="logo" alt="Logo" />
+        <div class="brand-text">
+          <div class="name">Nitin Tripathi</div>
+          <div class="role">B.Tech (CS) • Aspiring Full-Stack Dev</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Terminal Container -->
   <div class="terminal-container">
     <div class="terminal-header">
       <div class="controls">
@@ -21,18 +41,13 @@
         <div class="control minimize"></div>
         <div class="control maximize"></div>
       </div>
-      
-        <div>
-          <u>Nitin's Portfolio</u>
-        </div>
-      
+      <div class="terminal-title"><u>Nitin's Portfolio</u></div>
       <div style="width: 50px;"></div>
     </div>
     <div class="terminal-content">
       <h3>WELCOME</h3>
-      <!-- This first paragraph will have a typing effect -->
       <p>Initializing portfolio system...</p>
-      <p>Loading modules: [About, Projects, Contact]</p>
+      <p>Loading modules: [About, Projects, Contact, Skills]</p>
       <ul>
         <li>Module 1: About Me</li>
         <li>Module 2: Projects</li>
@@ -44,151 +59,194 @@
     </div>
   </div>
 
-  <!-- Original Portfolio Header Section -->
-  <div id="header">
-    <div class="container">
-      <nav>
-        <img src="images/Logo.png" class="logo" alt="Logo" />
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="header-text">
-        <p>BTech(1st Year) Student</p>
-        <!-- You can keep the glitch-text effect here as well -->
-        <h1 class="glitch-text" data-text="Hi, I'm Nitin from India">
-          Hi, I'm <span>Nitin</span><br />from India
+  <!-- Hero / Intro -->
+  <section id="home" class="hero">
+    <div class="container hero-inner">
+      <div class="hero-left">
+        <h1 class="glitch-text" data-text="Hi, I'm Nitin">
+          Hi, I'm <span>Nitin</span>
         </h1>
-        <br>
-        <a href="images\nitin resume final - enhanced.pdf" target="_blank" class="resume-link">
-            <button class="resume button">Resume</button>
-          </a>          
+        <p class="hero-sub">B.Tech 1st Year • Aspiring Full-Stack Developer • Open-source Contributor</p>
+        <div class="hero-ctas">
+          <a href="images/nitin resume final - enhanced.pdf" target="_blank" class="button resume">Resume</a>
+          <a href="#contact" class="button outline">Contact Me</a>
+        </div>
+        <div class="hero-meta">
+          <span>Location: India</span> • <span>Open to internships & collaboration</span>
+        </div>
+      </div>
+      <div class="hero-right">
+        <img src="images/nitin.png" alt="Nitin" class="hero-avatar" />
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- About Section -->
-  <div id="about">
-    <div class="container">
-      <div class="row">
-        <div class="about-col-1">
-          <img src="images/nitin.png" alt="User Photo" />
+  <!-- About -->
+  <section id="about" class="container about-section">
+    <div class="row about-row">
+      <div class="about-col-1">
+        <img src="images/nitin.png" alt="User Photo" />
+      </div>
+      <div class="about-col-2">
+        <h2 class="sub-title">About Me</h2>
+        <p class="about-paragraph">
+          Hey there! I’m <strong>Nitin Tripathi</strong>, a problem-solver, open-source contributor, and full-stack developer in the making.
+          Currently pursuing my B.Tech in Computer Science, I’m on a mission to master full-stack development by the end of 2025 and build tech that makes an impact.
+        </p>
+        <p class="about-paragraph compact">
+          Notable projects: <strong>WhitePaper</strong> (Django notepad), <strong>Gesture-Based Home Automation</strong> (OpenCV + Arduino), and an <strong>X-ray Image Similarity Tool</strong> (CV for warehouse verification).
+        </p>
+
+        <div class="tab-titles">
+          <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+          <p class="tab-links" onclick="opentab('education')">Education</p>
+          <p class="tab-links" onclick="opentab('achievements')">Achievements</p>
         </div>
-        <div class="about-col-2">
-          <h1 class="sub-title">About Me</h1>
-          <p>
-            Hey there! I’m Nitin Tripathi, a problem-solver, open-source contributor, and full-stack developer in the making. Currently pursuing my B.Tech in Computer Science, I’m on a mission to master full-stack development by the end of 2025 and build tech that makes an impact.
 
-I’ve already worked on some pretty cool projects, including: <br>
+        <div class="tab-contents active-tab" id="skills">
+          <ul>
+            <li><strong>Languages:</strong> Python, Java, HTML, CSS, JavaScript, TypeScript, SQL</li>
+            <li><strong>Frameworks:</strong> Django, .NET Core, Angular</li>
+            <li><strong>Tools:</strong> Git, VS Code, Arduino</li>
+          </ul>
+        </div>
 
-WhitePaper – An open-source digital notepad built with Django, making note-taking effortless.<br>
-Gesture-Based Home Automation – A smart home system using OpenCV & Arduino, designed to help the elderly control appliances with simple hand gestures.<br>
-X-ray Image Similarity Tool – A computer vision-based verification system ensuring product authenticity in warehouses.<br>
-Beyond projects, I’ve secured a runner-up position in a coding competition, and I’m gearing up for Google Summer of Code 2025, aiming to contribute to impactful open-source projects.
+        <div class="tab-contents" id="education">
+          <ul>
+            <li><strong>KIET Group of Institutions</strong> — B.Tech (2024-2028)</li>
+            <li>Schooling: SOS Hermann Gmeiner School (III–XII)</li>
+          </ul>
+        </div>
 
-I’m constantly pushing my limits, learning new technologies, and striving to create efficient, scalable, and innovative solutions. My ultimate goal? To become a top-tier full-stack developer and build a financially successful career doing what I love.
-
-Let’s connect and build something awesome together!
-          </p>
-          <div class="tab-titles">
-            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-            <p class="tab-links" onclick="opentab('education')">Education</p>
-            <p class="tab-links" onclick="opentab('achievements')">Achievements</p>
-          </div>
-          <div class="tab-contents active-tab" id="skills">
-            <ul>
-              <li>
-                <span>Programming Languages:</span><br />
-                Python, Java, HTML, CSS, JS, TS, SQL
-              </li>
-              <li>
-                <span>Web Development</span><br />
-                .NET CORE, Angular, Django
-              </li>
-              <li>
-                <span>DBMS</span><br />
-                SQL Server
-              </li>
-              <li>
-                <span>Other Tools & Technologies:</span><br />
-                Git & GitHub, VS Code, Arduino
-              </li>
-            </ul>
-          </div>
-          <div class="tab-contents" id="education">
-            <ul>
-              <li>
-                <span>Smile Kindergarten</span><br />
-                Playschool
-              </li>
-              <li>
-                <span>St. John's School</span><br />
-                LKG-UKG
-              </li>
-              <li>
-                <span>Vanasthali Public School</span><br />
-                UKG-II Grade
-              </li>
-              <li>
-                <span>SOS Hermann Gmeiner School</span><br />
-                III-XII Grade
-              </li>
-              <li>
-                <span>KIET Group of Institutions</span><br />
-                Btech (2024-2028)
-              </li>
-            </ul>
-          </div>
-          <div class="tab-contents" id="achievements">
-            <ul>
-              <li>
-                <span>CODEX</span><br />
-                Winner
-              </li>
-              <li>
-                <span>X Board</span><br />
-                98.4%
-              </li>
-              <li>
-                <span>Inter HGS</span><br />
-                5 Times winner
-              </li>
-              <li>
-                <span>KIET Mr Freshers</span><br />
-                Runner-up
-              </li>
-            </ul>
-          </div>
+        <div class="tab-contents" id="achievements">
+          <ul>
+            <li>Runner-up — College coding competition</li>
+            <li>Ranked in 88 competitions across academics & extracurriculars</li>
+          </ul>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Contact Form -->
-  <div id="contact">
-  <form method="post" action="/send-message">
-    
-    <h1 style="text-align: center;">CONTACT ME</h1>
-    
-    <div class="terminal-prompt">$ NAME:</div>
-    <input type="text" name="name" placeholder="Your name" required />
+  <!-- Projects -->
+  <section id="projects" class="container projects-section">
+    <h2 class="section-title">My Projects</h2>
+    <p class="section-sub">Selected projects — code, demos and brief descriptions</p>
 
-    <div class="terminal-prompt">$ EMAIL:</div>
-    <input type="email" name="email" placeholder="Your email" required />
+    <!-- NOTE: page auto-fetches your top 6 most recently updated public repos for "TheBadassProgrammer" -->
+    <div style="display:flex; gap:12px; align-items:center; margin-top:10px; margin-bottom:12px;">
+      <input id="gh-username" placeholder="GitHub username" style="padding:10px; border-radius:6px; background:rgba(0,0,0,0.6); color:var(--terminal-green); border:1px solid rgba(0,255,0,0.06);" />
+      <button id="load-gh" class="button small">Load Repos</button>
+      <button id="use-placeholder" class="button small outline">Restore Example Cards</button>
+      <div style="color:rgba(0,255,0,0.6); font-size:13px;">Tip: page auto-loads your latest public repos for the configured username.</div>
+    </div>
 
-    <div class="terminal-prompt">$ MESSAGE:</div>
-    <textarea name="message" placeholder="Your message here..." required></textarea>
+    <div class="projects-grid" id="projects-grid">
+      <!-- Placeholder cards (will be replaced automatically by the script below) -->
+      <article class="project-card">
+        <img src="images/project-placeholder.png" alt="placeholder" class="project-img" />
+        <div class="project-body">
+          <h3>Personal-Portfolio</h3>
+          <p>Your cyberpunk portfolio (this site) — retro terminal + matrix effects.</p>
+          <div class="project-tags"><span>HTML</span></div>
+          <div class="project-actions">
+            <a href="https://github.com/TheBadassProgrammer/Personal-Portfolio" class="button small" target="_blank">Repo</a>
+            <a href="https://nitin-ka-portfolio.vercel.app/" class="button small outline" target="_blank">Live</a>
+          </div>
+        </div>
+      </article>
 
-    <input type="submit" value="SEND MESSAGE" />
-  </form>
-  </div>
-</div>
+      <article class="project-card">
+        <img src="images/project-whitepaper.png" alt="WhitePaper" class="project-img" />
+        <div class="project-body">
+          <h3>WhitePaper</h3>
+          <p>Forked Django notepad — quick note-taking app.</p>
+          <div class="project-tags"><span>Django</span><span>HTML</span></div>
+          <div class="project-actions">
+            <a href="https://github.com/TheBadassProgrammer/WhitePaper" class="button small" target="_blank">Repo</a>
+            <a href="#" class="button small outline" target="_blank">Details</a>
+          </div>
+        </div>
+      </article>
 
-  <!-- JavaScript for Tab Switching (for About section tabs) -->
+      <article class="project-card">
+        <img src="images/project-gesture.png" alt="Gesture Automation" class="project-img" />
+        <div class="project-body">
+          <h3>ImageSimilarity</h3>
+          <p>Image similarity tooling (your X-ray/product-compatibility work).</p>
+          <div class="project-tags"><span>Python</span></div>
+          <div class="project-actions">
+            <a href="https://github.com/TheBadassProgrammer/ImageSimilarity" class="button small" target="_blank">Repo</a>
+            <a href="#" class="button small outline" target="_blank">Details</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="projects-note">
+      <em>I set the page to automatically load your 6 most recently updated public repos (GreenXP, circuit-cropper, ImageSimilarity, SlouchX, StormCLI, AssigneX). If you'd like different repos pinned, tell me which ones and I’ll hardcode them as featured cards.</em>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="container skills-section">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">
+        <div class="skill-title">Python</div>
+        <div class="skill-bar"><div class="skill-level" style="width: 88%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-title">Web Dev (HTML/CSS/JS)</div>
+        <div class="skill-bar"><div class="skill-level" style="width: 82%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-title">Django / Backend</div>
+        <div class="skill-bar"><div class="skill-level" style="width: 76%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-title">Computer Vision</div>
+        <div class="skill-bar"><div class="skill-level" style="width: 70%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="container contact-section">
+    <h2 class="section-title">Contact Me</h2>
+    <form method="post" action="/send-message" class="contact-form">
+      <div class="form-row">
+        <label class="terminal-prompt">$ NAME:</label>
+        <input type="text" name="name" placeholder="Your name" required />
+      </div>
+
+      <div class="form-row">
+        <label class="terminal-prompt">$ EMAIL:</label>
+        <input type="email" name="email" placeholder="Your email" required />
+      </div>
+
+      <div class="form-row">
+        <label class="terminal-prompt">$ MESSAGE:</label>
+        <textarea name="message" placeholder="Your message here..." required></textarea>
+      </div>
+
+      <input type="submit" value="SEND MESSAGE" />
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Nitin Tripathi — Built with <span style="color:#39ff14">♥</span></div>
+      <div class="socials">
+        <a href="https://github.com/TheBadassProgrammer" aria-label="GitHub" target="_blank">GitHub</a> •
+        <a href="https://www.linkedin.com/in/nitin-tripathi-296546328" aria-label="LinkedIn" target="_blank">LinkedIn</a> •
+        <a href="mailto:nitintripathi2710@gmail.com" aria-label="Email">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Small utility scripts -->
   <script>
     var tablinks = document.getElementsByClassName("tab-links");
     var tabcontents = document.getElementsByClassName("tab-contents");
@@ -199,77 +257,157 @@ Let’s connect and build something awesome together!
       for (let tabcontent of tabcontents) {
         tabcontent.classList.remove("active-tab");
       }
-      event.currentTarget.classList.add("active-link");
+      if (event && event.currentTarget) event.currentTarget.classList.add("active-link");
       document.getElementById(tabname).classList.add("active-tab");
     }
+
+    // Set current year
+    document.getElementById('year').innerText = new Date().getFullYear();
   </script>
 
-  <!-- Combined JavaScript for Matrix Rain, Terminal Boot Sequence, and Typing Effect -->
+  <!-- Main UI + GitHub fetch script -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // Matrix rain effect
+      // Matrix rain (kept same as before)
       const canvas = document.getElementById('matrix-bg');
       const ctx = canvas.getContext('2d');
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      
+      function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+      resizeCanvas(); window.addEventListener('resize', resizeCanvas);
       const characters = "ｦｱｳｴｵｶｷｹｺｻｼｽｾｿﾀﾂﾃﾅﾆﾇﾈﾊﾋﾎﾏﾐﾑﾒﾓﾔﾕﾗﾘﾜ0123456789".split("");
       const fontSize = 16;
-      const columns = canvas.width / fontSize;
-      const drops = [];
-      for (let i = 0; i < columns; i++) {
-        drops[i] = 1;
-      }
+      let columns = Math.floor(canvas.width / fontSize);
+      let drops = new Array(columns).fill(1);
       function draw() {
-        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "#0F0";
-        ctx.font = fontSize + "px monospace";
+        ctx.fillStyle = "rgba(0, 0, 0, 0.06)"; ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "#0F0"; ctx.font = fontSize + "px monospace";
         for (let i = 0; i < drops.length; i++) {
           const text = characters[Math.floor(Math.random() * characters.length)];
           ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-          if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-            drops[i] = 0;
-          }
+          if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
           drops[i]++;
         }
       }
       setInterval(draw, 35);
-      window.addEventListener('resize', () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      });
-  
-      // Terminal boot sequence effect (fade in the terminal container)
-      const termContainer = document.querySelector('.terminal-container');
-      termContainer.style.opacity = '0';
-      setTimeout(() => {
-        termContainer.style.transition = 'opacity 0.5s';
-        termContainer.style.opacity = '1';
-      }, 300);
-  
-      // Typing effect for the first paragraph in the terminal content
+
+      // Simple typing in terminal
       const firstPara = document.querySelector('.terminal-content p');
-      const originalText = firstPara.innerHTML;
-      firstPara.innerHTML = '';
-      let i = 0;
-      function typeWriter() {
-        if (i < originalText.length) {
-          firstPara.innerHTML += originalText.charAt(i);
-          i++;
-          setTimeout(typeWriter, 50);
+      if (firstPara) {
+        const originalText = firstPara.innerHTML;
+        firstPara.innerHTML = '';
+        let i = 0;
+        function typeWriter() {
+          if (i < originalText.length) {
+            firstPara.innerHTML += originalText.charAt(i);
+            i++;
+            setTimeout(typeWriter, 40);
+          }
+        }
+        setTimeout(typeWriter, 700);
+      }
+
+      // animate skill bars
+      const skillLevels = document.querySelectorAll('.skill-level');
+      function animateSkills() {
+        skillLevels.forEach(el => {
+          const width = el.style.width || "0%";
+          el.style.width = "0%";
+          setTimeout(() => el.style.width = width, 300);
+        });
+      }
+      animateSkills();
+
+      // ---------- GitHub integration ----------
+      // Auto-load for your username:
+      const GITHUB_USERNAME = 'TheBadassProgrammer'; // <--- auto-fetch username set here
+      const loadBtn = document.getElementById('load-gh');
+      const usernameInput = document.getElementById('gh-username');
+      const projectsGrid = document.getElementById('projects-grid');
+      const restoreBtn = document.getElementById('use-placeholder');
+
+      // helper to build card
+      function createRepoCard(repo) {
+        const article = document.createElement('article');
+        article.className = 'project-card';
+
+        const img = document.createElement('img');
+        img.className = 'project-img';
+        img.alt = repo.name + ' thumbnail';
+        // fallback to user avatar if repo has no image
+        img.src = repo.owner && repo.owner.avatar_url ? repo.owner.avatar_url : 'https://github.com/' + GITHUB_USERNAME + '.png';
+        article.appendChild(img);
+
+        const body = document.createElement('div');
+        body.className = 'project-body';
+        const h3 = document.createElement('h3'); h3.innerText = repo.name; body.appendChild(h3);
+
+        const p = document.createElement('p'); p.innerText = repo.description ? repo.description : 'No description.'; body.appendChild(p);
+
+        const tags = document.createElement('div'); tags.className = 'project-tags';
+        if (repo.language) {
+          const lang = document.createElement('span'); lang.innerText = repo.language; tags.appendChild(lang);
+        }
+        const upd = document.createElement('span');
+        const updatedAt = new Date(repo.updated_at);
+        upd.innerText = 'Updated: ' + (updatedAt.toLocaleDateString());
+        upd.style.fontSize = '11px'; upd.style.opacity = '0.8';
+        upd.style.padding = '6px 8px'; upd.style.background = 'rgba(0,255,0,0.02)'; upd.style.border = '1px solid rgba(0,255,0,0.02)';
+        tags.appendChild(upd);
+        body.appendChild(tags);
+
+        const actions = document.createElement('div'); actions.className = 'project-actions';
+        const repoLink = document.createElement('a'); repoLink.className = 'button small';
+        repoLink.href = repo.html_url; repoLink.target = '_blank'; repoLink.innerText = 'Repo';
+        actions.appendChild(repoLink);
+
+        if (repo.homepage) {
+          const live = document.createElement('a'); live.className = 'button small outline';
+          live.href = repo.homepage.startsWith('http') ? repo.homepage : 'https://' + repo.homepage;
+          live.target = '_blank'; live.innerText = 'Live'; actions.appendChild(live);
+        } else {
+          const details = document.createElement('a'); details.className = 'button small outline';
+          details.href = repo.html_url; details.target = '_blank'; details.innerText = 'Details'; actions.appendChild(details);
+        }
+
+        body.appendChild(actions);
+        article.appendChild(body);
+        return article;
+      }
+
+      async function loadReposFor(username) {
+        if (!username) {
+          alert('Please enter a GitHub username.');
+          return;
+        }
+        try {
+          loadBtn.innerText = 'Loading...'; loadBtn.disabled = true;
+          const url = `https://api.github.com/users/${encodeURIComponent(username)}/repos?per_page=6&sort=updated`;
+          const resp = await fetch(url);
+          if (!resp.ok) throw new Error('Could not fetch GitHub repos (rate-limit or user not found).');
+          const repos = await resp.json();
+          if (!Array.isArray(repos) || repos.length === 0) {
+            alert('No public repos found.');
+            return;
+          }
+          projectsGrid.innerHTML = '';
+          repos.forEach(repo => projectsGrid.appendChild(createRepoCard(repo)));
+        } catch (err) {
+          console.error(err);
+          alert('Could not load repos: ' + err.message);
+        } finally {
+          loadBtn.innerText = 'Load Repos'; loadBtn.disabled = false;
         }
       }
-      setTimeout(typeWriter, 800);
-      const cursorElements = document.querySelectorAll(
-        'h2, h3, .terminal-prompt'
-    );
-    
-    cursorElements.forEach(element => {
-        const cursor = document.createElement('span');
-        cursor.className = 'terminal-cursor';
-        element.appendChild(cursor);
-    });
+
+      // event bindings
+      loadBtn.addEventListener('click', () => {
+        const username = usernameInput.value.trim() || GITHUB_USERNAME;
+        loadReposFor(username);
+      });
+      restoreBtn.addEventListener('click', () => location.reload());
+
+      // auto-run for hardcoded username (auto-fetch)
+      usernameInput.value = GITHUB_USERNAME;
+      loadReposFor(GITHUB_USERNAME);
     });
   </script>
 </body>
